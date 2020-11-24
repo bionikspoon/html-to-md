@@ -22,6 +22,9 @@ jobs:
       - run:
           name: Linting
           command: yarn lint
+      - run:
+          name: Reporting Coverage
+          command: yarn ci:coverage
   node-12:
     <<: *test
     docker:
