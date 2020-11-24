@@ -1,0 +1,10 @@
+app:
+  - "mocha"
+require:
+  - ts-node/register
+extension:
+  - ts
+reporter: spec
+recursive: true
+spec:
+  - test/**/*.test.ts

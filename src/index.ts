@@ -1,6 +1,6 @@
 import { Command, flags } from "@oclif/command";
 
-class BionikspoonHtmlToMd extends Command {
+class HtmlToMd extends Command {
   static description = "describe the command here";
 
   static flags = {
@@ -16,7 +16,7 @@ class BionikspoonHtmlToMd extends Command {
   static args = [{ name: "file" }];
 
   async run() {
-    const { args, flags } = this.parse(BionikspoonHtmlToMd);
+    const { args, flags } = this.parse(HtmlToMd);
 
     const name = flags.name ?? "world";
     this.log(`hello ${name} from ./src/index.ts`);
@@ -26,4 +26,4 @@ class BionikspoonHtmlToMd extends Command {
   }
 }
 
-export = BionikspoonHtmlToMd;
+export = HtmlToMd;
