@@ -1,7 +1,8 @@
 @bionikspoon/html-to-md
 =======================
 
-A simple html to markdown converter
+A simple CLI for converting html to markdown
+
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@bionikspoon/html-to-md.svg)](https://npmjs.org/package/@bionikspoon/html-to-md)

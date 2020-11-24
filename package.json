@@ -1,6 +1,6 @@
 {
   "name": "@bionikspoon/html-to-md",
-  "description": "A simple html to markdown converter",
+  "description": "A simple CLI for converting html to markdown",
   "version": "0.0.0",
   "author": "Manu Phatak @bionikspoon",
   "bin": {
