@@ -4,6 +4,8 @@ jobs:
   node-latest: &test
     docker:
       - image: node:latest
+    environment:
+      COVERALLS_FLAG_NAME: node-latest
     working_directory: ~/cli
     steps:
       - checkout
@@ -29,12 +31,18 @@ jobs:
     <<: *test
     docker:
       - image: node:12
+    environment:
+      COVERALLS_FLAG_NAME: node-12
   node-10:
     <<: *test
     docker:
       - image: node:10
+    environment:
+      COVERALLS_FLAG_NAME: node-10
   cache:
     <<: *test
+    environment:
+      COVERALLS_FLAG_NAME: cache
     steps:
       - checkout
       - run:
