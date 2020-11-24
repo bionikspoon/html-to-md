@@ -1,6 +1,6 @@
 import { Command, flags } from "@oclif/command";
 
-class HtmlToMd extends Command {
+export default class HtmlToMd extends Command {
   static description = "describe the command here";
 
   static flags = {
@@ -25,5 +25,3 @@ class HtmlToMd extends Command {
     }
   }
 }
-
-export = HtmlToMd;
