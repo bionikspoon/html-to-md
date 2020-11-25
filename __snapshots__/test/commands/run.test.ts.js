@@ -118,8 +118,8 @@ OPTIONS
 
 EXAMPLES
   $ html-to-md --help
-  $ cat index.html | html-to-md
-  $ html-to-md index.html
+  $ cat index.html | html-to-md run
+  $ html-to-md run index.html
 
 
 `;
@@ -129,8 +129,8 @@ exports[
 ] = `
  ›   Error: Must include an html file to convert to markdown
  ›   Try this:
- ›     * $ cat index.html | html-to-md
- ›     * $ html-to-md index.html
- ›     * $ html-to-md --help
+ ›     * $ cat index.html | html-to-md run
+ ›     * $ html-to-md run index.html
+ ›     * $ html-to-md run --help
 
 `;
