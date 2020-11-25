@@ -31,6 +31,8 @@ jobs:
       - run:
           name: Release
           command: |
+            git config user.email "circleci@phatak.io"
+            git config user.name "Circle CI"
             [ "$CIRCLE_JOB" == "node-latest" ] && yarn release || exit 0
   node-12:
     <<: *test
