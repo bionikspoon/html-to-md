@@ -5,8 +5,6 @@ jobs:
     docker:
       - image: node:latest
     resource_class: small
-    # environment:
-    #   COVERALLS_FLAG_NAME: node-latest
     working_directory: ~/cli
     steps:
       - checkout
@@ -35,14 +33,10 @@ jobs:
     <<: *test
     docker:
       - image: node:12
-    # environment:
-    #   COVERALLS_FLAG_NAME: node-12
   node-10:
     <<: *test
     docker:
       - image: node:10
-    # environment:
-    #   COVERALLS_FLAG_NAME: node-10
   report-coverage:
     docker:
       - image: cimg/base:2020.01
@@ -56,8 +50,6 @@ jobs:
             exit 0
   cache:
     <<: *test
-    # environment:
-    #   COVERALLS_FLAG_NAME: cache
     steps:
       - checkout
       - run:
