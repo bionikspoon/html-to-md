@@ -67,8 +67,6 @@
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
     "preversion": "oclif-dev readme && prettier --write README.md && git add README.md",
-    "version": "yarn version `auto version` -m 'Bump version to: %s [skip ci]'",
-    "publish": "yarn publish && git push --follow-tags --set-upstream origin $CIRCLE_BRANCH",
     "release": "auto shipit"
   },
   "types": "lib/index.d.ts",
