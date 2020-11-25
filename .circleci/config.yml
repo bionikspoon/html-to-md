@@ -70,7 +70,7 @@ jobs:
             - /usr/local/share/.config/yarn
 
 workflows:
-  "@bionikspoon/html-to-md":
+  html-to-md:
     jobs:
       - node-latest
       - node-12
