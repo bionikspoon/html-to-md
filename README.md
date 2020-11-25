@@ -25,7 +25,7 @@ $ npm install -g @bionikspoon/html-to-md
 $ html-to-md COMMAND
 running command...
 $ html-to-md (-v|--version|version)
-@bionikspoon/html-to-md/0.0.1-0 linux-x64 node-v15.3.0
+@bionikspoon/html-to-md/0.0.2 darwin-x64 node-v14.15.0
 $ html-to-md --help [COMMAND]
 USAGE
   $ html-to-md COMMAND
