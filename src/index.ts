@@ -6,6 +6,12 @@ import * as TurndownService from "turndown";
 export default class HtmlToMd extends Command {
   static description = "A simple tool to convert HTML to markdown";
 
+  static examples = [
+    "$ html-to-md --help",
+    "$ cat index.html | html-to-md",
+    "$ html-to-md index.html",
+  ];
+
   static flags = {
     version: flags.version({ char: "v" }),
     help: flags.help({ char: "h" }),
@@ -91,9 +97,9 @@ export default class HtmlToMd extends Command {
       this.error("Must include an html file to convert to markdown", {
         exit: 1,
         suggestions: [
-          `cat index.html | ${this.config.bin}`,
-          `${this.config.bin} index.html`,
-          `${this.config.bin} --help`,
+          `$ cat index.html | ${this.config.bin}`,
+          `$ ${this.config.bin} index.html`,
+          `$ ${this.config.bin} --help`,
         ],
       });
     }

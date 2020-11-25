@@ -86,6 +86,11 @@ OPTIONS
   -s, --strong=__|**                                  [default: **] strong delimiter
   -v, --version                                       show CLI version
 
+EXAMPLES
+  $ html-to-md --help
+  $ cat index.html | html-to-md
+  $ html-to-md index.html
+
 
 `;
 
@@ -124,8 +129,8 @@ exports[
 ] = `
  ›   Error: Must include an html file to convert to markdown
  ›   Try this:
- ›     * cat index.html | html-to-md
- ›     * html-to-md index.html
- ›     * html-to-md --help
+ ›     * $ cat index.html | html-to-md
+ ›     * $ html-to-md index.html
+ ›     * $ html-to-md --help
 
 `;
