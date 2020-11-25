@@ -66,12 +66,12 @@
   "repository": "bionikspoon/html-to-md",
   "scripts": {
     "lint": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme && prettier --write README.md",
     "postpack": "rm -f oclif.manifest.json",
     "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && prettier --write README.md && git add README.md"
   },
   "types": "lib/index.d.ts",
   "husky": {
