@@ -31,7 +31,7 @@ jobs:
       - run:
           name: Release
           command: |
-            [ "$CIRCLE_JOB" == "node-latest" ] && yarn release
+            [ "$CIRCLE_JOB" == "node-latest" ] && yarn release || exit 0
   node-12:
     <<: *test
     docker:
