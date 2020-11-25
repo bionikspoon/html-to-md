@@ -25,7 +25,7 @@ $ npm install -g @bionikspoon/html-to-md
 $ html-to-md COMMAND
 running command...
 $ html-to-md (-v|--version|version)
-@bionikspoon/html-to-md/0.0.1-0 darwin-x64 node-v14.15.0
+@bionikspoon/html-to-md/0.0.2-0 darwin-x64 node-v10.20.1
 $ html-to-md --help [COMMAND]
 USAGE
   $ html-to-md COMMAND
@@ -106,6 +106,6 @@ EXAMPLES
   $ html-to-md run index.html
 ````
 
-_See code: [src/commands/run.ts](https://github.com/bionikspoon/html-to-md/blob/v0.0.1-0/src/commands/run.ts)_
+_See code: [src/commands/run.ts](https://github.com/bionikspoon/html-to-md/blob/v0.0.2-0/src/commands/run.ts)_
 
 <!-- commandsstop -->
