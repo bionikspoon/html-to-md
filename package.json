@@ -66,8 +66,10 @@
     "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
-    "version": "oclif-dev readme && prettier --write README.md && git add README.md",
-    "release": "auto shipit"
+    "preversion": "oclif-dev readme && prettier --write README.md && git add README.md",
+    "version": "yarn version `auto version` -m 'Bump version to: %s [skip ci]'",
+    "publish": "yarn publish && git push --follow-tags --set-upstream origin $branch",
+    "release": "auto changelog && yarn run version && yarn run publish && auto release"
   },
   "types": "lib/index.d.ts",
   "husky": {
