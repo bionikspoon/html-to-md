@@ -68,7 +68,7 @@
     "lint": "eslint . --ext .ts --config .eslintrc",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "postpack": "rm -f oclif.manifest.json",
-    "test": "nyc --extension .ts mocha --forbid-only",
+    "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
     "version": "oclif-dev readme && git add README.md"

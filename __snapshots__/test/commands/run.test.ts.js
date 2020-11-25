@@ -104,16 +104,35 @@ ARGUMENTS
   FILE  an html document to convert to markdown
 
 OPTIONS
-  -b, --bullet=*|-|+                                  [default: *] symbol for list-item bullets
-  -c, --code-block-style=indented|fenced              [default: fenced] syntax for code blocks
+  -b, --bullet=*|-|+                                  [default: *] symbol for 
+                                                      list-item bullets
+
+  -c, --code-block-style=indented|fenced              [default: fenced] syntax 
+                                                      for code blocks
+
   -e, --em=_|*                                        [default: _] em delimiter
-  -f, --fence=\`\`\`|~~~                                 [default: \`\`\`] symbol for code block fences
+
+  -f, --fence=\`\`\`|~~~                                 [default: \`\`\`] symbol for 
+                                                      code block fences
+
   -h, --help                                          show CLI help
-  -l, --link-style=inlined|referenced                 [default: referenced] style for urls
-  -p, --heading-style=pound|underline                 [default: pound] format headings with # or underlines
-  -r, --horizontal-rule=***|---|___                   [default: ---] symbol for horizontal rule
-  -r, --link-reference-style=full|collapsed|shortcut  [default: full] style for link references
-  -s, --strong=__|**                                  [default: **] strong delimiter
+
+  -l, --link-style=inlined|referenced                 [default: referenced] 
+                                                      style for urls
+
+  -p, --heading-style=pound|underline                 [default: pound] format 
+                                                      headings with # or 
+                                                      underlines
+
+  -r, --horizontal-rule=***|---|___                   [default: ---] symbol for 
+                                                      horizontal rule
+
+  -r, --link-reference-style=full|collapsed|shortcut  [default: full] style for 
+                                                      link references
+
+  -s, --strong=__|**                                  [default: **] strong 
+                                                      delimiter
+
   -v, --version                                       show CLI version
 
 EXAMPLES
