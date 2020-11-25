@@ -118,3 +118,14 @@ It aims to be [CommonMark](http://commonmark.org/) compliant, and includes optio
 +   linkReferenceStyle (full, collapsed, or shortcut)
 
 `;
+
+exports[
+  "@bionikspoon/html-to-md it makes a recommendation when missing an input 1"
+] = `
+ ›   Error: Must include an html file to convert to markdown
+ ›   Try this:
+ ›     * cat index.html | html-to-md
+ ›     * html-to-md index.html
+ ›     * html-to-md --help
+
+`;
