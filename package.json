@@ -23,6 +23,7 @@
     "@types/node": "14.14.9",
     "@types/turndown": "5.0.0",
     "chai": "^4",
+    "coveralls": "3.1.0",
     "eslint": "7.14",
     "eslint-config-oclif": "^3.1",
     "eslint-config-oclif-typescript": "0.2",
@@ -60,7 +61,7 @@
     "prepack": "rm -rf lib && tsc -b && oclif-dev readme && prettier --write README.md",
     "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
-    "ci:coverage": "mkdir -p coverage && nyc report --reporter=text-lcov > coverage/lcov.info",
+    "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
     "version": "oclif-dev readme && prettier --write README.md && git add README.md"
   },
   "types": "lib/index.d.ts",

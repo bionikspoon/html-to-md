@@ -1,12 +1,10 @@
 version: 2.1
 
-orbs:
-  coveralls: coveralls/coveralls@1.0.5
-
 jobs:
   node-latest: &test
     docker:
       - image: node:latest
+    resource_class: small
     # environment:
     #   COVERALLS_FLAG_NAME: node-latest
     working_directory: ~/cli
@@ -29,11 +27,7 @@ jobs:
           command: yarn lint
       - run:
           name: Creating coverage LCOV
-          command: yarn ci:coverage
-      - coveralls/upload:
-          parallel: true
-          flag_name: $CIRCLE_JOB
-          verbose: true
+          command: COVERALLS_PARALLEL=true COVERALLS_FLAG_NAME=$CIRCLE_JOB yarn ci:coverage --verbose
   node-12:
     <<: *test
     docker:
@@ -48,10 +42,15 @@ jobs:
     #   COVERALLS_FLAG_NAME: node-10
   report-coverage:
     docker:
-      - image: node:latest
+      - image: cimg/base:2020.01
+    resource_class: small
     steps:
-      - coveralls/upload:
-          parallel_finished: true
+      - run:
+          name: Trigger coveralls completion
+          command: |
+            curl "https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN" \
+              -d "payload[build_num]=$CIRCLE_WORKFLOW_ID&payload[status]=done"
+            exit 0
   cache:
     <<: *test
     # environment:
