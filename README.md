@@ -11,6 +11,7 @@ A simple CLI for converting html to markdown
 
 <!-- toc -->
 
+- [@bionikspoon/html-to-md](#bionikspoonhtml-to-md)
 - [Usage](#usage)
 - [Commands](#commands)
 <!-- tocstop -->
