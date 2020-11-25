@@ -11,7 +11,9 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/errors": "1.3.4",
-    "@oclif/plugin-help": "^3",
+    "@oclif/plugin-autocomplete": "0.2.0",
+    "@oclif/plugin-help": "3.2.0",
+    "@oclif/plugin-not-found": "1.2.4",
     "cli-ux": "5.5.1",
     "tslib": "2",
     "turndown": "7.0.0"
@@ -53,13 +55,19 @@
   "license": "MIT",
   "main": "lib/index.js",
   "oclif": {
+    "commands": "./lib/commands",
     "bin": "html-to-md",
-    "name": "html-to-md"
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-autocomplete"
+    ]
   },
   "repository": "bionikspoon/html-to-md",
   "scripts": {
     "lint": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "postpack": "rm -f oclif.manifest.json",
     "test": "nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
