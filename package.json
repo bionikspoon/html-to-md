@@ -16,12 +16,15 @@
     "turndown": "7.0.0"
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "10.4.2",
+    "@auto-it/first-time-contributor": "10.4.2",
     "@oclif/dev-cli": "^1",
     "@oclif/test": "^1",
     "@types/chai": "^4",
     "@types/mocha": "8.0.4",
     "@types/node": "14.14.9",
     "@types/turndown": "5.0.0",
+    "auto": "10.4.2",
     "chai": "^4",
     "coveralls": "3.1.0",
     "eslint": "7.14",
@@ -63,7 +66,8 @@
     "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
-    "version": "oclif-dev readme && prettier --write README.md && git add README.md"
+    "version": "oclif-dev readme && prettier --write README.md && git add README.md",
+    "release": "auto shipit"
   },
   "types": "lib/index.d.ts",
   "husky": {
@@ -78,5 +82,13 @@
     "snap-shot-it": {
       "useRelativePath": true
     }
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "all-contributors",
+      "first-time-contributor",
+      "released"
+    ]
   }
 }

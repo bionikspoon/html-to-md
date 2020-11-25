@@ -28,7 +28,10 @@ jobs:
       - run:
           name: Uploading coverage data
           command: COVERALLS_PARALLEL=true COVERALLS_FLAG_NAME=$CIRCLE_JOB yarn ci:coverage
-
+      - run:
+          name: Release
+          command: |
+            [ "$CIRCLE_JOB" == "node-latest" ] && yarn release
   node-12:
     <<: *test
     docker:
