@@ -1,7 +1,7 @@
 exports["@bionikspoon/html-to-md converts demo.html to markdown 1"] = `
 # Turndown Demo
 
-This demonstrates [turndown][1] – an HTML to Markdown converter in JavaScript.
+This demonstrates [turndown][1] – **an HTML to Markdown converter in JavaScript.**
 
 ## Usage
 
@@ -14,7 +14,7 @@ console.log(
 
 ---
 
-It aims to be [CommonMark][2] compliant, and includes options to style the output. These options include:
+It aims to be [CommonMark][2] compliant, and includes options to _style the output_. These options include:
 
 *   headingStyle (setext or atx)
 *   horizontalRule (\\*, -, or \\_)
@@ -34,7 +34,7 @@ It aims to be [CommonMark][2] compliant, and includes options to style the outpu
 exports["@bionikspoon/html-to-md converts snippet.html to markdown 1"] = `
 # Turndown Demo
 
-This demonstrates [turndown][1] – an HTML to Markdown converter in JavaScript.
+This demonstrates [turndown][1] – **an HTML to Markdown converter in JavaScript.**
 
 ## Usage
 
@@ -47,7 +47,7 @@ console.log(
 
 ---
 
-It aims to be [CommonMark][2] compliant, and includes options to style the output. These options include:
+It aims to be [CommonMark][2] compliant, and includes options to _style the output_. These options include:
 
 *   headingStyle (setext or atx)
 *   horizontalRule (\\*, -, or \\_)
@@ -117,7 +117,7 @@ exports["@bionikspoon/html-to-md reads turndown configuration 1"] = `
 Turndown Demo
 =============
 
-This demonstrates [turndown](https://github.com/domchristie/turndown) – an HTML to Markdown converter in JavaScript.
+This demonstrates [turndown](https://github.com/domchristie/turndown) – __an HTML to Markdown converter in JavaScript.__
 
 Usage
 -----
@@ -129,7 +129,7 @@ Usage
 
 ***
 
-It aims to be [CommonMark](http://commonmark.org/) compliant, and includes options to style the output. These options include:
+It aims to be [CommonMark](http://commonmark.org/) compliant, and includes options to *style the output*. These options include:
 
 +   headingStyle (setext or atx)
 +   horizontalRule (\\*, -, or \\_)

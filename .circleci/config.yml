@@ -22,12 +22,15 @@ jobs:
       - run:
           name: Testing
           command: yarn test
+      - store_test_results:
+          path: test-results
       - run:
           name: Linting
           command: yarn lint
       - run:
           name: Uploading coverage data
           command: COVERALLS_PARALLEL=true COVERALLS_FLAG_NAME=$CIRCLE_JOB yarn ci:coverage
+
   node-12:
     <<: *test
     docker:
