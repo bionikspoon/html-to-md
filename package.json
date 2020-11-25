@@ -66,7 +66,7 @@
     "test": "COLUMNS=80 nyc --extension .ts mocha --forbid-only",
     "test:update": "SNAPSHOT_UPDATE=1 yarn test",
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
-    "prerelease": "oclif-dev readme && prettier --write README.md && git add README.md",
+    "prerelease": "oclif-dev readme && prettier --write README.md && git add README.md && git commit -m 'Update README.md [skip ci]'",
     "release": "auto shipit"
   },
   "types": "lib/index.d.ts",
