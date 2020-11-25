@@ -1,11 +1,10 @@
----
-version: 2
+version: 2.1
 jobs:
   node-latest: &test
     docker:
       - image: node:latest
-    environment:
-      COVERALLS_FLAG_NAME: node-latest
+    # environment:
+    #   COVERALLS_FLAG_NAME: node-latest
     working_directory: ~/cli
     steps:
       - checkout
@@ -25,24 +24,35 @@ jobs:
           name: Linting
           command: yarn lint
       - run:
-          name: Reporting Coverage
+          name: Creating coverage LCOV
           command: yarn ci:coverage
+      - coveralls/upload:
+          parallel: true
+          flag_name: $CIRCLE_JOB
+          verbose: true
   node-12:
     <<: *test
     docker:
       - image: node:12
-    environment:
-      COVERALLS_FLAG_NAME: node-12
+    # environment:
+    #   COVERALLS_FLAG_NAME: node-12
   node-10:
     <<: *test
     docker:
       - image: node:10
-    environment:
-      COVERALLS_FLAG_NAME: node-10
+    # environment:
+    #   COVERALLS_FLAG_NAME: node-10
+  report-coverage:
+    docker:
+      - image: node:latest
+    steps:
+      - coveralls/upload:
+          parallel_finished: true
+
   cache:
     <<: *test
-    environment:
-      COVERALLS_FLAG_NAME: cache
+    # environment:
+    #   COVERALLS_FLAG_NAME: cache
     steps:
       - checkout
       - run:
@@ -62,6 +72,11 @@ workflows:
       - node-latest
       - node-12
       - node-10
+      - report-coverage:
+          requires:
+            - node-latest
+            - node-12
+            - node-10
       - cache:
           filters:
             tags:
