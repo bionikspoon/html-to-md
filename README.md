@@ -4,9 +4,9 @@ A simple CLI for converting html to markdown
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@bionikspoon/html-to-md.svg)](https://npmjs.org/package/@bionikspoon/html-to-md)
-[![CircleCI](https://circleci.com/gh/bionikspoon/html-to-md/tree/master.svg?style=shield)](https://circleci.com/gh/bionikspoon/html-to-md/tree/master)
+[![CircleCI](https://circleci.com/gh/bionikspoon/html-to-md/tree/main.svg?style=shield)](https://circleci.com/gh/bionikspoon/html-to-md/tree/main)
 [![Downloads/week](https://img.shields.io/npm/dw/@bionikspoon/html-to-md.svg)](https://npmjs.org/package/@bionikspoon/html-to-md)
-[![License](https://img.shields.io/npm/l/@bionikspoon/html-to-md.svg)](https://github.com/bionikspoon/html-to-md/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/@bionikspoon/html-to-md.svg)](https://github.com/bionikspoon/html-to-md/blob/main/package.json)
 [![Coverage Status](https://coveralls.io/repos/github/bionikspoon/html-to-md/badge.svg?branch=main)](https://coveralls.io/github/bionikspoon/html-to-md?branch=main)
 
 <!-- toc -->

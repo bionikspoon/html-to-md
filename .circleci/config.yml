@@ -1,11 +1,10 @@
----
-version: 2
+version: 2.1
+
 jobs:
   node-latest: &test
     docker:
       - image: node:latest
-    environment:
-      COVERALLS_FLAG_NAME: node-latest
+    resource_class: small
     working_directory: ~/cli
     steps:
       - checkout
@@ -21,28 +20,39 @@ jobs:
       - run:
           name: Testing
           command: yarn test
+      - store_test_results:
+          path: test-results
       - run:
           name: Linting
           command: yarn lint
       - run:
-          name: Reporting Coverage
-          command: yarn ci:coverage
+          name: Uploading coverage data
+          command: COVERALLS_PARALLEL=true COVERALLS_FLAG_NAME=$CIRCLE_JOB yarn ci:coverage
+      - run:
+          name: Release
+          command: |
+            [ "$CIRCLE_JOB" == "node-latest" ] && yarn release || exit 0
   node-12:
     <<: *test
     docker:
       - image: node:12
-    environment:
-      COVERALLS_FLAG_NAME: node-12
   node-10:
     <<: *test
     docker:
       - image: node:10
-    environment:
-      COVERALLS_FLAG_NAME: node-10
+  report-coverage:
+    docker:
+      - image: cimg/base:2020.01
+    resource_class: small
+    steps:
+      - run:
+          name: Trigger coveralls completion
+          command: |
+            curl "https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN" \
+              -d "payload[build_num]=$CIRCLE_WORKFLOW_ID&payload[status]=done"
+            exit 0
   cache:
     <<: *test
-    environment:
-      COVERALLS_FLAG_NAME: cache
     steps:
       - checkout
       - run:
@@ -56,12 +66,16 @@ jobs:
             - /usr/local/share/.config/yarn
 
 workflows:
-  version: 2
-  "@bionikspoon/html-to-md":
+  html-to-md:
     jobs:
       - node-latest
       - node-12
       - node-10
+      - report-coverage:
+          requires:
+            - node-latest
+            - node-12
+            - node-10
       - cache:
           filters:
             tags:

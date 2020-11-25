@@ -1,8 +1,11 @@
 import { Command, flags } from "@oclif/command";
 
 import cli from "cli-ux";
-import * as fs from "fs/promises";
+import * as fs from "fs";
 import * as TurndownService from "turndown";
+import { promisify } from "util";
+
+const readFile = promisify(fs.readFile);
 export default class HtmlToMd extends Command {
   static description = "A simple tool to convert HTML to markdown";
 
@@ -89,7 +92,7 @@ export default class HtmlToMd extends Command {
     const { args } = this.parse(HtmlToMd);
 
     if (args.file) {
-      const response = await fs.readFile(args.file);
+      const response = await readFile(args.file);
       return response.toString();
     }
 
