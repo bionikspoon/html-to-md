@@ -92,6 +92,10 @@
       "all-contributors",
       "first-time-contributor",
       "released"
-    ]
+    ],
+    "author": {
+      "name": "Auto",
+      "email": "auto@phatak.io"
+    }
   }
 }
