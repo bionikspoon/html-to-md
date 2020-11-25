@@ -68,7 +68,7 @@
     "ci:coverage": "nyc report --reporter=text-lcov | coveralls",
     "preversion": "oclif-dev readme && prettier --write README.md && git add README.md",
     "version": "yarn version `auto version` -m 'Bump version to: %s [skip ci]'",
-    "publish": "yarn publish && git push --follow-tags --set-upstream origin $branch",
+    "publish": "yarn publish && git push --follow-tags --set-upstream origin $CIRCLE_BRANCH",
     "release": "auto changelog && yarn run version && yarn run publish && auto release"
   },
   "types": "lib/index.d.ts",
@@ -93,9 +93,6 @@
       "first-time-contributor",
       "released"
     ],
-    "author": {
-      "name": "Auto",
-      "email": "auto@phatak.io"
-    }
+    "author": "Auto <auto@phatak.io>"
   }
 }
