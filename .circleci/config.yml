@@ -52,7 +52,6 @@ jobs:
     steps:
       - coveralls/upload:
           parallel_finished: true
-
   cache:
     <<: *test
     # environment:
