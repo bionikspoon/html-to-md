@@ -1,3 +1,15 @@
+# v0.0.3 (Wed Nov 25 2020)
+
+#### 🐛 Bug Fix
+
+- update readme [#3](https://github.com/bionikspoon/html-to-md/pull/3) ([@bionikspoon](https://github.com/bionikspoon))
+
+#### Authors: 1
+
+- Manu Phatak ([@bionikspoon](https://github.com/bionikspoon))
+
+---
+
 # v0.0.2 (Wed Nov 25 2020)
 
 :tada: This release contains work from a new contributor! :tada:
